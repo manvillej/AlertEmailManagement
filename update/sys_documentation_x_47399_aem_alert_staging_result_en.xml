@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="result" label="Result" language="en" table="x_47399_aem_alert_staging">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>result</element>
+            <help/>
+            <hint/>
+            <label>Result</label>
+            <language>en</language>
+            <name>x_47399_aem_alert_staging</name>
+            <plural>Results</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-05-22 15:20:05</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>d0b7b1c7db323200544370adbf961955</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Result</sys_name>
+            <sys_package display_value="Alert Email Management" source="x_47399_aem">1be2bc56dbf63200544370adbf9619b9</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Alert Email Management">1be2bc56dbf63200544370adbf9619b9</sys_scope>
+            <sys_update_name>sys_documentation_x_47399_aem_alert_staging_result_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-05-22 15:20:05</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

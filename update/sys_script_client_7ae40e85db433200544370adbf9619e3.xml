@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>email_address</field>
+        <global>true</global>
+        <messages/>
+        <name>Check Email</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+var re = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+var address = newValue;
+	if (isLoading || newValue === '') {
+		if(address.search(re) != -1){
+			//good email
+			g_form.addDecoration('email_address', 'icon-check-circle', 'Good Email', 'color-green');
+		} else{
+			//bad email
+			g_form.addDecoration('email_address', 'icon-delete', 'Bad Email', 'color-red');
+		}
+		
+		return;
+	}
+
+if(address.search(re) != -1){
+	//good email
+	g_form.removeDecoration('email_address', 'icon-delete', 'Bad Email', 'color-red');
+	g_form.addDecoration('email_address', 'icon-check-circle', 'Good Email', 'color-green');
+} else{
+	//bad email
+	g_form.removeDecoration('email_address', 'icon-check-circle', 'Good Email', 'color-green');
+	g_form.addDecoration('email_address', 'icon-delete', 'Bad Email', 'color-red');
+}
+   //Type appropriate comment here, and begin script below
+   
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-05-28 21:46:19</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>7ae40e85db433200544370adbf9619e3</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>Check Email</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Alert Email Management" source="x_47399_aem">1be2bc56dbf63200544370adbf9619b9</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Alert Email Management">1be2bc56dbf63200544370adbf9619b9</sys_scope>
+        <sys_update_name>sys_script_client_7ae40e85db433200544370adbf9619e3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-05-28 23:08:46</sys_updated_on>
+        <table>x_47399_aem_alert_address</table>
+        <type>onChange</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

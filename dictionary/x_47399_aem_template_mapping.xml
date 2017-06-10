@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Template Mapping" max_length="40" name="x_47399_aem_template_mapping" type="collection">
+        <element label="Address" mandatory="true" max_length="32" name="address" reference="x_47399_aem_alert_address" type="reference"/>
+        <element label="Knowledge" max_length="32" name="knowledge" reference="kb_knowledge" reference_qual="active=true^EQ" reference_qual_condition="active=true^EQ" type="reference"/>
+        <element label="Knowledge Articles" max_length="4000" name="knowledge_articles" reference="kb_knowledge" reference_qual="active=true^EQ" reference_qual_condition="active=true^EQ" type="glide_list"/>
+        <element label="Template" max_length="32" name="template" reference="sys_template" type="reference"/>
+        <index name="index">
+            <element name="template"/>
+        </index>
+        <index name="index2">
+            <element name="address"/>
+        </index>
+        <index name="index3">
+            <element name="knowledge"/>
+        </index>
+    </element>
+</database>

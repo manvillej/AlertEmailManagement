@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_47399_aem_alert_staging</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Look up Template Map  - no keywords</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	var template_map = new GlideRecord('x_47399_aem_template_mapping');
+	template_map.addQuery('address.email_address',current.email.origemail);
+	//add query to grab only templatemaps with no keywords
+	template_map.query();
+	if(template_map.next()){
+		current.template_map=template_map;
+		current.template=template_map.template;
+	}
+	current.update();
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-05-28 16:07:16</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>886ab085db033200544370adbf961936</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Look up Template Map  - no keywords</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Alert Email Management" source="x_47399_aem">1be2bc56dbf63200544370adbf9619b9</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Alert Email Management">1be2bc56dbf63200544370adbf9619b9</sys_scope>
+        <sys_update_name>sys_script_886ab085db033200544370adbf961936</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-05-28 16:11:35</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=886ab085db033200544370adbf961936"/>
+</record_update>

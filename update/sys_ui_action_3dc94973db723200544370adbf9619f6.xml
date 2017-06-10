@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="INSERT_OR_UPDATE">
+        <action_name/>
+        <active>true</active>
+        <client>false</client>
+        <comments/>
+        <condition/>
+        <form_action>true</form_action>
+        <form_button>true</form_button>
+        <form_context_menu>false</form_context_menu>
+        <form_link>false</form_link>
+        <hint/>
+        <list_action>false</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <name>Create Incident 4.0</name>
+        <onclick/>
+        <order>100</order>
+        <script><![CDATA[//get template & Email
+var template = current.template;
+var email = current.email;
+
+//generate correct record from template table
+var rec = new GlideRecord(template.table);
+rec.initialize();
+
+//set fields of record from template
+var fields = template.template.replace('^EQ','').split('^');  
+for(var i in fields){  
+	var kv = fields[i].split('=');  
+	var k = kv[0];  
+	var v = kv[1];  
+	if(rec.hasOwnProperty(k)){  
+		rec[k] = v;         
+	}     
+}
+
+//set field from email
+rec.work_notes = '[code]' + getKnowledgeLink(current.template_map.knowledge) + '[/code]';
+rec.work_notes = '[code]' + getAllKnowledgeArticles(current.template_map.knowledge_articles) + '[/code]';
+rec.comments = '[code]'+ email.body + '[/code]';
+rec.short_description = email.subject;
+
+//insert new record
+var sysID = rec.insert();
+
+var sa = new GlideSysAttachment();
+sa.copy(current.getTableName(),current.getValue('sys_id'),template.table, sysID);
+
+//update record
+current.result = rec.number;
+current.update();
+
+action.setRedirectURL(rec);
+action.setReturnURL(current);
+
+function getKnowledgeLink(knowledge){
+	var html = 'Knowledge Found: ' + '<a href="' + 'https://dev20277.service-now.com/nav_to.do?uri=%2Fkb_view.do%3Fsysparm_article%3D'+ knowledge.number + '"  target="_blank">'+knowledge.number + ' - ' + knowledge.short_description +'</a>';
+	return html;
+}
+
+function getAllKnowledgeArticles(knowledge_articles){
+	var articles=knowledge_articles.split(',');
+	var kb = new GlideRecord('kb_knowledge');
+	var html='';
+	for(var i in articles){  
+		kb.get(articles[i]);
+		html+=getKnowledgeLink(kb)+'<br>';
+	}
+	return html;
+}]]></script>
+        <show_insert>true</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-05-24 19:55:13</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>3dc94973db723200544370adbf9619f6</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Create Incident 4.0</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Alert Email Management" source="x_47399_aem">1be2bc56dbf63200544370adbf9619b9</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Alert Email Management">1be2bc56dbf63200544370adbf9619b9</sys_scope>
+        <sys_update_name>sys_ui_action_3dc94973db723200544370adbf9619f6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-05-28 15:15:20</sys_updated_on>
+        <table>x_47399_aem_alert_staging</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+</record_update>

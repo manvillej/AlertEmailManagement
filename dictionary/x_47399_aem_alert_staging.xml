@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Alert Staging" max_length="40" name="x_47399_aem_alert_staging" type="collection">
+        <element label="Email" max_length="32" name="email" reference="sys_email" type="reference"/>
+        <element label="from" max_length="80" name="from" type="string"/>
+        <element default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="result" max_length="80" name="result" type="string"/>
+        <element default="e04b21c3db323200544370adbf961915" label="Template" max_length="32" name="template" reference="sys_template" type="reference"/>
+        <element label="Template Map" max_length="32" name="template_map" reference="x_47399_aem_template_mapping" type="reference"/>
+        <index name="index">
+            <element name="template"/>
+        </index>
+        <index name="index2">
+            <element name="email"/>
+        </index>
+        <index name="index3">
+            <element name="template_map"/>
+        </index>
+    </element>
+</database>
