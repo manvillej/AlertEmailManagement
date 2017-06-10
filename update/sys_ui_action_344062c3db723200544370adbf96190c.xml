@@ -2,7 +2,7 @@
 <record_update sys_domain="global" table="sys_ui_action">
     <sys_ui_action action="INSERT_OR_UPDATE">
         <action_name/>
-        <active>true</active>
+        <active>false</active>
         <client>false</client>
         <comments>Same as 2.0, but it also transfers attachments and redirects to incident(for testing/validation purposes)</comments>
         <condition/>
@@ -75,16 +75,16 @@ function getKnowledgeLink(knowledge){
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>344062c3db723200544370adbf96190c</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>Create Incident 3.0</sys_name>
         <sys_overrides/>
         <sys_package display_value="Alert Email Management" source="x_47399_aem">1be2bc56dbf63200544370adbf9619b9</sys_package>
         <sys_policy/>
-        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_replace_on_upgrade>true</sys_replace_on_upgrade>
         <sys_scope display_value="Alert Email Management">1be2bc56dbf63200544370adbf9619b9</sys_scope>
         <sys_update_name>sys_ui_action_344062c3db723200544370adbf96190c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-05-24 17:44:39</sys_updated_on>
+        <sys_updated_on>2017-06-10 22:11:58</sys_updated_on>
         <table>x_47399_aem_alert_staging</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

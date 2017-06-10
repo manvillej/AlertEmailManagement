@@ -21,7 +21,7 @@
         <sys_class_name>sys_db_object</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-05-20 02:56:54</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>0d2abc1adbf63200544370adbf9619b8</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Alert Address</sys_name>

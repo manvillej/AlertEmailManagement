@@ -51,8 +51,8 @@
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2017-05-20 02:29:03</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
-        <sys_id>2604fcd6dbf63200544370adbf96196f</sys_id>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>13ebc9d5db133200544370adbf9619fb</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Number</sys_name>
         <sys_package display_value="Alert Email Management" source="x_47399_aem">1be2bc56dbf63200544370adbf9619b9</sys_package>
@@ -60,8 +60,8 @@
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Alert Email Management">1be2bc56dbf63200544370adbf9619b9</sys_scope>
         <sys_update_name>sys_dictionary_x_47399_aem_alert_staging_number</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2017-05-20 02:29:03</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2017-06-10 22:10:57</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
